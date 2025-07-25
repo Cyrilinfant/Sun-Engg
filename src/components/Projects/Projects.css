@@ -1,0 +1,233 @@
+:root {
+  --primary: #4097f7;
+  --light-bg: rgba(255, 255, 255, 0.2);
+  --border: rgba(255, 255, 255, 0.3);
+  --text: #1c1c1e;
+  --glass: rgba(255, 255, 255, 0.15);
+}
+
+.timeline-container {
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 50px;
+  color: #222;
+}
+
+.year-buttons {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 10px 0;
+  scroll-behavior: smooth;
+  cursor: grab;
+  margin-bottom: 50px;
+  max-width: 100%;
+}
+
+.year-buttons:active {
+  cursor: grabbing;
+}
+
+/* Scrollbar styling */
+.year-buttons::-webkit-scrollbar {
+  height: 8px;
+}
+
+.year-buttons::-webkit-scrollbar-track {
+  background: #eee;
+  border-radius: 10px;
+}
+
+.year-buttons::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+}
+
+.year-buttons button {
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 2px solid var(--border);
+  border-radius: 20px;
+  padding: 40px 20px;
+  font-size: 28px;
+  font-weight: 600;
+  color: #222;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.year-buttons button:hover {
+  transform: scale(1.05);
+  background-color: var(--primary);
+  color: #fff;
+}
+
+.year-buttons .active {
+  background-color: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.project-card {
+  background: white;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease-in-out;
+  border: 1px solid #f1f1f1;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-card h3 {
+  margin-top: 0;
+  font-size: 20px;
+  color: var(--primary);
+}
+
+.project-card p {
+  font-size: 14px;
+  margin: 8px 0;
+  color: #555;
+}
+
+.p-tag {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 50px;
+  color: #222;
+  margin-top: 20px;
+}
+
+/* -------------------- Responsive Media Queries -------------------- */
+
+/* Tablets (768px – 1199px) */
+@media (max-width: 1199px) {
+  h1 {
+    font-size: 30px;
+    margin-bottom: 40px;
+  }
+
+  .year-buttons button {
+    font-size: 22px;
+    padding: 30px 18px;
+  }
+
+  .project-card h3 {
+    font-size: 18px;
+  }
+
+  .p-tag {
+    font-size: 28px;
+  }
+}
+/* ---------- Image Slider Styles ---------- */
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto 40px auto;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.slider-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 16px;
+  max-height: 400px;
+  transition: opacity 0.8s ease-in-out;
+  opacity: 1;
+}
+
+.slider-btn {
+  display: none;
+}
+
+
+.slider-btn:hover {
+  background-color: #2f6ec4;
+}
+
+.slider-btn.left {
+  left: 16px;
+}
+
+.slider-btn.right {
+  right: 16px;
+}
+
+
+
+
+/* Mobile Devices (max 767px) */
+@media (max-width: 767px) {
+  .timeline-container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+
+  .year-buttons {
+    gap: 12px;
+  }
+
+  .year-buttons button {
+    font-size: 18px;
+    padding: 20px 14px;
+    border-radius: 14px;
+  }
+
+  .project-card {
+    padding: 20px;
+  }
+
+  .project-card p {
+    font-size: 13px;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr; /* Stack vertically */
+  }
+
+  .p-tag {
+    font-size: 24px;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .slider-btn {
+    font-size: 20px;
+    padding: 8px 12px;
+  }
+
+  .slider-image {
+    max-height: 250px;
+  }
+}
+
