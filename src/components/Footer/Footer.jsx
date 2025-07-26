@@ -11,7 +11,10 @@ const Footer = () => {
             <li>Privacy Policy</li>
             
         </ul>
-       <p className='haki'>developed by Hakiwave</p>
+      <div className="haki">
+        <p>developed by <span>Haki Wave</span></p>
+        
+       </div>
 
     </div>
   )
