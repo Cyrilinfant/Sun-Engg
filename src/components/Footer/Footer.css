@@ -16,6 +16,9 @@
     font-size: 13px;
     font-family: 'Courier New', Courier, monospace;
 }
+.haki p span{
+    color: red;
+}
 /* -------------------- Responsive Media Queries -------------------- */
 @media(max-width:600px){
     .footer{
